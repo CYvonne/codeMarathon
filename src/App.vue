@@ -65,7 +65,7 @@
 <style scoped lang="less">
 	.icon-back {
 		display: inline-block;
-		background-image: url(../../codeMarathon/src/assets/icon-back.png);
+		background-image: url(./assets/icon-back.png);
 	    width: 14px;
     	height: 14px;
     	background-size: contain;

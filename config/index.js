@@ -33,7 +33,7 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
     		'/api': {
-	        target: 'http://10.2.4.54:8080', //target为后台请求地址
+	        target: 'http://10.2.4.50:8080', //target为后台请求地址
           pathRewrite:{  
             '^/api':''  
 	        }  

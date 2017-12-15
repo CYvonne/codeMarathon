@@ -8,12 +8,17 @@ Vue.use(VueRouter)
 
 //smui框架
 import 'smui/dist/css/smui.min.css'
-import {Navbar, Toast, Cell, Group, Modal} from 'smui'
+import {Navbar, Toast, Cell, Group, Modal, Slider, Icon, Textarea, Input, Address } from 'smui'
 Vue.use(Navbar)
 Vue.use(Toast)
 Vue.use(Cell)
 Vue.use(Group)
 Vue.use(Modal)
+Vue.use(Slider)
+Vue.use(Icon)
+Vue.use(Textarea)
+Vue.use(Input)
+Vue.use(Address)
 
 // 请求
 import axios from 'axios' 
