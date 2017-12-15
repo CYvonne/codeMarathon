@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import mainTab1 from '@/components/mainTab1'
-import mainTab2 from '@/components/mainTab2'
-import mainTab3 from '@/components/mainTab3'
-import mainTab4 from '@/components/mainTab4'
+import teamList from '@/components/teamList'
+import teamDetail from '@/components/teamDetail'
+import applyForm from '@/components/applyForm'
+import QRCode from '@/components/QRCode'
 
 Vue.use(Router)
 
@@ -12,24 +12,24 @@ export default new Router({
     {
       path: '/',
       name: '',
-      component: mainTab1
+      component: teamList
     },
     {
-      path: '/mainTab1',
-      name: 'mainTab1',
-      component: mainTab1
+      path: '/teamList',
+      name: 'teamList',
+      component: teamList
     },{
-      path: '/mainTab2',
-      name: 'mainTab2',
-      component: mainTab2
+      path: '/teamDetail',
+      name: 'teamDetail',
+      component: teamDetail
     },{
-      path: '/mainTab3',
-      name: 'mainTab3',
-      component: mainTab3
+      path: '/applyForm',
+      name: 'applyForm',
+      component: applyForm
     },{
-      path: '/mainTab4',
-      name: 'mainTab4',
-      component: mainTab4
+      path: '/QRCode',
+      name: 'QRCode',
+      component: QRCode
     }
   ]
 })

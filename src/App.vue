@@ -1,28 +1,12 @@
 <template>
 	<div>
 		<v-navbar :title="title" :left-options="leftOptions" @on-click-back="back">
+			<a slot="left" @click="close">
+				<span class="icon-back"></span>
+			</a>
 		</v-navbar>
 
 		<router-view></router-view>
-		
-		<v-tabbar>
-       <v-tabbar-item selected link="/mainTab1">
-        <span slot="icon" class="icon1"></span>
-        <span slot="label">导航一</span>
-      </v-tabbar-item>
-      <v-tabbar-item link="/mainTab2">
-        <span slot="icon" class="icon2"></span>
-        <span slot="label">导航2</span>
-      </v-tabbar-item>
-      <v-tabbar-item link="/mainTab3">
-        <span slot="icon" class="icon3"></span>
-        <span slot="label">导航3</span>
-      </v-tabbar-item>
-      <v-tabbar-item link="/mainTab4">
-        <span slot="icon" class="icon4"></span>
-        <span slot="label">导航4</span>
-      </v-tabbar-item>
-    </v-tabbar>
 		
 	</div>
 </template>
@@ -31,16 +15,35 @@
 	export default {
 		data() {
 			return {
-				title:'首页标题',
-				footerVisable:true,
-				backNum: 1,
 			}
 		},
 		computed: {
+			title() {
+				let currentTitle = '';
+				switch(this.$route.path) {
+					case '/':
+					case '/teamList': 
+						currentTitle = '顺丰集货助手';
+						break;
+					case '/teamDetail': 
+						currentTitle = '集货详情';
+						break;
+					case '/applyForm': 
+						currentTitle = '填写寄件信息';
+						break;
+					case '/QRCode': 
+						currentTitle = '顺丰集货助手';
+						break;
+					default: 
+						currentTitle = '顺丰集货助手';
+				}
+				
+				return currentTitle;
+			},
 			leftOptions() {
 				return {
-					backText: '返回',
-					showBack: this.$route.path == '/mainTab1' || this.$route.path == '/mainTab2' || this.$route.path == '/mainTab3' || this.$route.path == '/mainTab4'? false : true,
+					backText: '',
+					showBack: true,//this.$route.path == '/mainTab1' || this.$route.path == '/mainTab2' || this.$route.path == '/mainTab3' || this.$route.path == '/mainTab4'? false : true,
 					preventGoBack: true,
 				}
 			},
@@ -49,6 +52,25 @@
 			back() {
 				this.$router.go(-1);
 			},
+			close() {
+				this.$Modal.confirm.show({
+					title: '即将退出',
+					content: '确定退出顺丰集货助手吗？',
+				})
+			}
 		}
 	}
 </script>
+
+<style scoped lang="less">
+	.icon-back {
+		display: inline-block;
+		background-image: url(../../codeMarathon/src/assets/icon-back.png);
+	    width: 14px;
+    	height: 14px;
+    	background-size: contain;
+    	background-repeat: no-repeat;
+    	margin-left: 15px;
+	}
+	
+</style>

@@ -8,29 +8,12 @@ Vue.use(VueRouter)
 
 //smui框架
 import 'smui/dist/css/smui.min.css'
-import {Navbar, Tabbar, TabbarItem, Toast,Tab,TabItem,Carousel,CarouselItem } from 'smui'
+import {Navbar, Toast, Cell, Group, Modal} from 'smui'
 Vue.use(Navbar)
-Vue.use(Tabbar)
-Vue.use(TabbarItem)
 Vue.use(Toast)
-Vue.use(Tab)
-Vue.use(TabItem)
-Vue.use(Carousel)
-Vue.use(CarouselItem)
-//echarts
-//import ECharts from 'vue-echarts/components/ECharts.vue'
-//import 'echarts/lib/chart/bar'
-//import 'echarts/lib/chart/pie'
-//import 'echarts/lib/chart/line'
-//import 'echarts/lib/component/legend'
-//import 'echarts/lib/component/title'
-//import 'echarts/lib/component/tooltip'
-//import 'echarts/lib/component/datazoom'
-//
-//Vue.component('chart', ECharts)
-
-import VueChart from './comm/js/drawCharts.js'
-Vue.use(VueChart)
+Vue.use(Cell)
+Vue.use(Group)
+Vue.use(Modal)
 
 // 请求
 import axios from 'axios' 
@@ -88,7 +71,6 @@ axios.interceptors.response.use((res) => {
 
 //自己写的样式和js
 import './comm/css/global.less'
-import './comm/js/drawCharts.js'
 
 //适配
 import './comm/js/flexible.js'
